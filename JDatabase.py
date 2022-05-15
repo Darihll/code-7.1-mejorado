@@ -42,7 +42,7 @@ class JsonDatabase(object):
     def create_admin(self,name):
         self.items[name] = {'dir': '',
                      'cloudtype': 'moodle',
-                     'moodle_host': 'https://cursos.uo.edu.cu/',
+                     'moodle_host': '---',
                      'moodle_repo_id': 4,
                      'moodle_user': '',
                      'moodle_password': '',
