@@ -230,7 +230,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Frankenstein200'
+        tl_admin_user = 'Angelfernan85'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -248,10 +248,10 @@ def onmessage(update,bot:ObigramClient):
                 user_info = jdb.get_user(username)
                 jdb.save()
         else:
-            mensaje = "❌No tienes Acceso❌.\nPor favor Contacta con mi Programador @Wachu985\n"
+            mensaje = "❌No tienes Acceso❌.\nPor favor Contacta con mi Propietario @Angelfernan85\n"
             intento_msg = "💢El usuario @"+username+ " ha intentando usar el bot sin permiso💢"
             bot.sendMessage(update.message.chat.id,mensaje)
-            bot.sendMessage(958475767,intento_msg)
+            bot.sendMessage(838890371,intento_msg)
             return
 
 
@@ -486,9 +486,8 @@ def onmessage(update,bot:ObigramClient):
         thread.store('msg',message)
 
         if '/start' in msgText:
-            start_msg = '💻Bot: Moodle Wachu Venta 1 V7.1\n'
-            start_msg+= '📭Desarrollador: @Wachu985\n'
-            start_msg+= '📌Guia: https://nube.reduc.edu.cu/index.php/s/L9WMzC56ZgTZo6b/download/Tutorial%20R%C3%A1pido%20.mp4\n'
+            start_msg = '💻Bot: version V7.2.5\n'
+            start_msg+= '📭Propietario: @Angelfernan85\n'
             start_msg+= '🚨Uso: Envia Enlaces De Descarga y Archivos Para Procesar (Configure Antes De Empezar , Vea El /tutorial)\n'
             bot.editMessageText(message,start_msg)
         elif '/token' in msgText:
@@ -602,9 +601,9 @@ def onmessage(update,bot:ObigramClient):
             #    bot_token = os.environ.get('bot_token')
             #    
                 # set in debug
-            #    api_id = 7386053
-            #    api_hash = '78d1c032f3aa546ff5176d9ff0e7f341'
-            #    bot_token = '5328815726:AAFpywLEWQx-TxqbTp_3kswM7fcYfGlQOpw'
+            #    api_id = 9520699
+            #    api_hash = '353e5b6ef2c174d0e8d7fb62e277840d'
+            #    bot_token = '5308916401:AAH9EvFeV3kpwXLjJFV2spvxJkJreYUHE5E'
 
             #    chat_id = int(update.message.chat.id)
             #    message_id = int(update.message.message_id)
