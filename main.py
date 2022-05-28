@@ -142,7 +142,7 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
                return filesdata
         return None
     except Exception as ex:
-        bot.editMessageText(message,f'❌Error {str(ex)}❌')
+        bot.editMessageText(message,f'❌Error en la pagina❌')
 
 
 def processFile(update,bot,message,file,thread=None,jdb=None):
@@ -321,12 +321,45 @@ def onmessage(update,bot:ObigramClient):
             bot.sendMessage(update.message.chat.id,tuto.read())
             tuto.close()
             return
+        if '/crypt' in msgText:
+            proxy_sms = str(msgText).split(' ')[1]
+            proxy = S5Crypto.encrypt(f'{proxy_sms}')
+            bot.sendMessage(update.message.chat.id, f'Proxy encryptado:\n{proxy}')
+            return
+        if '/search_proxy' in msgText:
+            msg_start = 'Buscando proxy, esto puede tardar de una a dos horas...'
+            bot.sendMessage(update.message.chat.id,msg_start)
+            print("Buscando proxy...")
+            for port in range(3029,3032):
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                result = sock.connect_ex(('152.206.85.87',port))  
+
+                if result == 0: 
+                    print ("Puerto abierto!")
+                    print (f"Puerto: {port}")  
+                    proxy = f'152.206.85.87:{port}'
+                    proxy_new = S5Crypto.encrypt(f'{proxy}')
+                    msg = 'Su nuevo proxy es:\n\nsocks5://' + proxy_new
+                    bot.sendMessage(update.message.chat.id,msg)
+                    break
+                else: 
+                    print ("Error...Buscando...")
+                    print (f"Buscando en el puerto: {port}")
+                    sock.close()
+                    return
+                if '/decrypt' in msgText:
+            proxy_sms = str(msgText).split(' ')[1]
+            proxy_de = S5Crypto.decrypt(f'{proxy_sms}')
+            bot.sendMessage(update.message.chat.id, f'Proxy decryptado:\n{proxy_de}')
+            return
+        
         if '/info' in msgText:
             getUser = user_info
             if getUser:
                 statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                 bot.sendMessage(update.message.chat.id,statInfo)
                 return
+            
         if '/zips' in msgText:
             getUser = user_info
             if getUser:
