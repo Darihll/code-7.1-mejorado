@@ -144,7 +144,6 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
     except Exception as ex:
         bot.editMessageText(message,f'❌Error en la pagina❌')
 
-
 def processFile(update,bot,message,file,thread=None,jdb=None):
     file_size = get_file_size(file)
     getUser = jdb.get_user(update.message.sender.username)
@@ -253,7 +252,6 @@ def onmessage(update,bot:ObigramClient):
             bot.sendMessage(update.message.chat.id,mensaje)
             bot.sendMessage(838890371,intento_msg)
             return
-
 
         msgText = ''
         try: msgText = update.message.text
