@@ -230,7 +230,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Angelfernan85'
+        tl_admin_user = 'bladimirlorenzo'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -248,7 +248,7 @@ def onmessage(update,bot:ObigramClient):
                 user_info = jdb.get_user(username)
                 jdb.save()
         else:
-            mensaje = "❌No tienes Acceso❌.\nPor favor Contacta con mi Propietario @Angelfernan85\n"
+            mensaje = "❌No tienes Acceso❌.\nPor favor Contacta con mi Propietario @bladimirlorenzo\n"
             intento_msg = "💢El usuario @"+username+ " ha intentando usar el bot sin permiso💢"
             bot.sendMessage(update.message.chat.id,mensaje)
             bot.sendMessage(838890371,intento_msg)
@@ -520,7 +520,7 @@ def onmessage(update,bot:ObigramClient):
 
         if '/start' in msgText:
             start_msg = '💻Bot: version V7.2.5\n'
-            start_msg+= '📭Propietario: @Angelfernan85\n'
+            start_msg+= '📭Propietario: @bladimirlorenzo\n'
             start_msg+= '🚨Uso: Envia Enlaces De Descarga y Archivos Para Procesar (Configure Antes De Empezar , Vea El /tutorial)\n'
             bot.editMessageText(message,start_msg)
         elif '/token' in msgText:
