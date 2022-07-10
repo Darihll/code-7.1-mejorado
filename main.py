@@ -230,7 +230,7 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        #tl_admin_user = 'diago8888'
+        #tl_admin_user = 'bladimirlorenzo'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -248,10 +248,10 @@ def onmessage(update,bot:ObigramClient):
                 user_info = jdb.get_user(username)
                 jdb.save()
         else:
-            mensaje = "❌No tienes Acceso❌.\nPor favor contacta con mi programador @diago8888\n"
+            mensaje = "❌No tienes Acceso❌.\nPor favor contacta con mi programador @bladimirlorenzo\n"
             intento_msg = "💢El usuario @"+username+ " ha intentando usar el bot sin permiso💢"
             bot.sendMessage(update.message.chat.id,mensaje)
-            bot.sendMessage(906940331,intento_msg)
+            bot.sendMessage(838890371,intento_msg)
             return
 
 
@@ -531,8 +531,8 @@ def onmessage(update,bot:ObigramClient):
         thread.store('msg',message)
 
         if '/start' in msgText:
-            start_msg = '💢Bot Creeper Uploader versión 2.0\n'
-            start_msg+= '🛠️Desarrollador: @diago8888\n'
+            start_msg = '💢Bot Uploader versión 7.2.5\n'
+            start_msg+= '🛠️Desarrollador: @bladimirlorenzo\n'
             bot.editMessageText(message,start_msg)
         elif '/token' in msgText:
             message2 = bot.editMessageText(message,'🔗Obteniendo Token🔗')
@@ -645,9 +645,9 @@ def onmessage(update,bot:ObigramClient):
             #    bot_token = os.environ.get('bot_token')
             #    
                 # set in debug
-            #    api_id = 18693993
-            #    api_hash = '382ee6b53bdd0df66a52ea9779c62424'
-            #    bot_token = '5371733981:AAF-C9H4xrVMqHYgFdFHXxqyVFkvY99Sdrw'
+            #    api_id =  9520699
+            #    api_hash = '353e5b6ef2c174d0e8d7fb62e277840d'
+            #    bot_token = '5308916401:AAH9EvFeV3kpwXLjJFV2spvxJkJreYUHE5E'
 
             #    chat_id = int(update.message.chat.id)
             #    message_id = int(update.message.message_id)
